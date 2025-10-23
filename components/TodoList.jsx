@@ -68,13 +68,13 @@ export default function TodoList() {
 
   return (
     <div className="p-4 max-w-4xl mx-auto flex flex-col items-center justify-center h-screen">
-      <div className="border-2 border-[#38485C] m-[40px_30px] p-[5px_15px] md:m-[15px_40px] md:p-[8px_20px] lg:m-[20px_50px] lg:p-[10px_25px] h-[80vh] w-[50vh] shadow-xl rounded-[20px]">
+      <div className="border-2 border-[black] mt-[40px] p-[5px_15px] md:m-[15px_40px] md:p-[8px_20px] lg:m-[20px_50px] lg:p-[10px_25px] h-[80vh] w-[50vh] shadow-xl rounded-[20px]">
         <h1 className="[font-size:1.875rem] md:[font-size:2.25rem] font-bold text-center mb-6  bg-clip-text ">
         TO-DO LIST
       </h1>
 
       {/* Search & Filter */}
-      <div className="flex flex-col md:flex-row md:justify-between mb-4 gap-3">
+      <div className="flex flex-col md:flex-row md:justify-between mb-[20px] gap-[5px]">
         <div className="flex gap-[10px]">
           <input
             className="flex w-[300px] h-[40px] border-2 border-indigo-900 rounded-[20px]"
@@ -91,7 +91,7 @@ export default function TodoList() {
           </button>
         </div>
         <select
-          className="border-2 border-indigo-900 rounded px-3 py-2 w-full md:w-1/4"
+          className="border-2 border-indigo-900 rounded-[50px] px-3 py-2 w-[200px] md:w-1/4"
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
         >
@@ -102,21 +102,24 @@ export default function TodoList() {
       </div>
 
       {/* Add new todo */}
-      <div className="flex flex-col md:flex-row gap-2 mb-4">
+      <div className="flex flex-col md:flex-row gap-[15px] md:gap-[5px]  mb-[15px] " >
         <input
-          className="flex-1 border-2 border-indigo-900 rounded px-3 py-2 text-lg"
+          className="flex border-2 border-indigo-900 rounded-[50px] h-[40px] px-3 py-2 text-lg"
           type="text"
           placeholder="Enter your task"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleAddTodo()}
         />
-        <button
-          className="bg-indigo-900 text-white px-4 py-2 rounded font-bold flex items-center gap-1"
+        <div className='flex justify-center'>
+         <button
+          className="flex bg-[indigo] text-white px-4 py-2 rounded-[15px] font-bold items-center aling-center w-[100px] h-[30px] gap-1"
           onClick={handleAddTodo}
         >
           <IoMdAdd /> ADD
         </button>
+        </div>
+       
       </div>
 
       {/* Todo List */}
@@ -127,7 +130,7 @@ export default function TodoList() {
         {currentTodos.map((todo, index) => (
           <li
             key={todo.id}
-            className="flex flex-col md:flex-row items-start md:items-center justify-between border-2 border-indigo-900 rounded p-3 bg-white"
+            className="flex flex-col gap-[7px] md:flex-row items-start md:items-center justify-between border-2 border-indigo-900 rounded p-3 bg-white"
           >
             <div className="flex items-center gap-3 flex-1">
               {/* Status Toggle */}
@@ -195,8 +198,12 @@ export default function TodoList() {
         ))}
       </ul>
 
-      {/* Pagination */}
-      <div className="flex justify-center gap-2 mt-4 flex-wrap">
+      
+
+      </div>
+
+        {/* Pagination */}
+      <div className="flex justify-center gap-[10px] m-[20px] flex-wrap ">
         <button
           className="px-4 py-1 bg-indigo-900 text-white rounded disabled:opacity-50"
           onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
@@ -224,8 +231,7 @@ export default function TodoList() {
         </button>
       </div>
 
-      </div>
-      <footer className="text-center font-semibold text-white mt-6 p-4 bg-gradient-to-r from-indigo-900/40 via-blue-700/40 to-indigo-500/40 rounded">
+      <footer className="text-center mb-[10px] font-semibold text-white mt-6 p-4 bg-gradient-to-r from-indigo-900/40 via-blue-700/40 to-indigo-500/40 rounded">
         &copy; {new Date().getFullYear()} ROYAL{"'"}s Todo App
       </footer>
     </div>
