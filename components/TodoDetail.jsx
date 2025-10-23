@@ -1,7 +1,7 @@
 'use client';
 import { useContext } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { TodosContext } from '../../context/TodosContext';
+import { TodosContext } from '../context/TodosContext';
 
 export default function TodoDetail() {
   const { id } = useParams();
