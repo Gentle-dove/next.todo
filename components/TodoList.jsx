@@ -226,7 +226,7 @@ export default function TodoList() {
 
       </div>
       <footer className="text-center font-semibold text-white mt-6 p-4 bg-gradient-to-r from-indigo-900/40 via-blue-700/40 to-indigo-500/40 rounded">
-        &copy; {new Date().getFullYear()} ROYAL's Todo App
+        &copy; {new Date().getFullYear()} ROYAL{"'"}s Todo App
       </footer>
     </div>
   );
